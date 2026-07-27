@@ -671,7 +671,7 @@ function parseIngredientes(desc){
   return normalized.split(",").map(s=> s.trim()).filter(Boolean);
 }
 // bases de pão — sem elas não dá pra montar o lanche, então não entram na lista de remoção
-const BASES_FIXAS = new Set(["baguete","pão de hambúrguer","pão de gergelim","pão"]);
+const BASES_FIXAS = new Set(["pão de hambúrguer","pão de gergelim","pão brioche","pão"]);
 function ingredientesRemoviveis(desc){
   return parseIngredientes(desc).filter(ing=> !BASES_FIXAS.has(ing.toLowerCase()));
 }
@@ -841,7 +841,7 @@ function itemRow(it, catId){
       <div class="item-main">
         <div class="item-name-row"><span class="item-name">${it.name}</span>${tagHtml}</div>
         ${it.desc ? `<div class="item-desc">${it.desc}</div>` : ""}
-        <div class="item-disponibilidade" style="display:none;font-size:0.76rem;font-weight:700;color:#C4681E;margin-top:4px;"></div>
+        <div class="item-disponibilidade" style="display:none;font-size:0.76rem;font-weight:700;color:#FBF3DD;margin-top:4px;"></div>
       </div>
       <div class="item-side">${sideHtml}</div>
     </div>`;
